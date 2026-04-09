@@ -1,0 +1,366 @@
+/*==================================================================
+  [1. Root Variables & Google Fonts]
+==================================================================*/
+:root {
+    /* Minimalist Accessible Light Palette */
+    --bs-primary: #1e293b; /* Slate 800 - Softer dark tone */
+    --bs-secondary: #475569; /* Slate 600 - High contrast secondary */
+    --bs-danger: #dc2626; /* Accessible Red Accent */
+    
+    --bg-color: #fafaf9; /* Stone 50 - Warm off-white, anti-fatigue */
+    --text-color: #1c1917; /* Stone 900 - Softened black */
+    --border-color: #cbd5e1; /* Slate 300 */
+    
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/*==================================================================
+  [2. Base Styles reset]
+==================================================================*/
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+    /* Soft colorful subtle backgrounds (Accessible & Anti-fatigue) */
+    background-image: radial-gradient(at 0% 0%, rgba(241, 245, 249, 0.8) 0px, transparent 50%),
+                      radial-gradient(at 100% 100%, rgba(248, 250, 252, 0.8) 0px, transparent 50%),
+                      radial-gradient(at 100% 0%, rgba(254, 242, 242, 0.5) 0px, transparent 50%);
+    background-attachment: fixed;
+}
+
+::selection {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Typographic overrides */
+h1, h2, h3, h4, h5, h6, .title-font {
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+/* Let's make the main title HUGE like "UI/UX DESIGNER" */
+.hero-title {
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+}
+
+/*==================================================================
+  [3. Navbar]
+==================================================================*/
+.navbar {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(253, 249, 244, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1030;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    color: var(--text-color) !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 1rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+        background-color: rgba(253, 249, 244, 0.9) !important;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .navbar-collapse {
+        background-color: rgba(253, 249, 244, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1rem 1.5rem;
+        border: 1px solid var(--border-color);
+        margin-top: 1rem;
+        box-shadow: 5px 5px 0px rgba(0,0,0,0.05);
+    }
+    .nav-item {
+        width: 100%;
+    }
+    .nav-link {
+        margin: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eaeaea;
+        display: block;
+    }
+    .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+}
+
+/*==================================================================
+  [4. Dividers & Sections]
+==================================================================*/
+.section-divider {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Minimalist thick divider for headers */
+.header-line {
+    border-bottom: 2px solid var(--text-color);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/*==================================================================
+  [5. Hero Profile Image]
+==================================================================*/
+.hero-img-container {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px; /* Slightly squared off as requested */
+    background: #fff;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.05); /* Brutalist shadow */
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.hero-img-container img {
+    border-radius: 12px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/*==================================================================
+  [6. Skills List]
+==================================================================*/
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+.technical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.technical-grid li {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    transition: transform 0.2s;
+}
+
+.technical-grid li:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.05);
+}
+
+/*==================================================================
+  [7. Projects (Minimalist Cards)]
+==================================================================*/
+.project-card-minimal {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+    margin-bottom: 4rem;
+}
+
+.project-card-minimal:hover {
+    transform: translateY(-5px);
+}
+
+.project-img-wrapper {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+.project-img-wrapper img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #eaeaea;
+}
+
+.project-link-text {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.project-link-text i {
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+}
+
+.project-card-minimal:hover .project-link-text i {
+    transform: translate(3px, 3px); /* Arrow moves down-right */
+}
+
+/*==================================================================
+  [8. Forms & Inputs]
+==================================================================*/
+.minimal-input {
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+    background: transparent;
+    border-radius: 0;
+    padding: 10px 0;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    box-shadow: none !important;
+}
+
+.minimal-input:focus {
+    background: transparent;
+    border-color: var(--bs-danger);
+    color: var(--text-color);
+}
+
+.minimal-input::placeholder {
+    color: var(--bs-secondary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.btn-minimal {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 15px 40px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-minimal:hover {
+    background-color: var(--bs-danger);
+    color: #fff;
+}
+
+/*==================================================================
+  [9. Footer & Utilities]
+==================================================================*/
+.footer-line {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    margin-top: 5rem;
+}
+
+.social-icon-minimal {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon-minimal:hover {
+    color: var(--bs-danger);
+}
+
+.social-icon-btn {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon-btn:hover {
+    background-color: var(--text-color) !important;
+    color: var(--bg-color) !important;
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 0px rgba(0,0,0,1) !important;
+}
+
+/* Utils */
+.py-6 { padding-top: 6rem; padding-bottom: 6rem; }
+.py-7 { padding-top: 8rem; padding-bottom: 8rem; }
+
+/* Testimonials & Article minimal */
+.testimonial-text {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #333;
+    font-style: italic;
+}
+
+.article-box {
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+}
+.article-box:hover {
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.05); /* Brutalist shadow */
+}
+
+/* Custom CSS fade in animations (Static) */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
