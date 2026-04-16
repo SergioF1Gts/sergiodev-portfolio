@@ -23,6 +23,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
+    font-size: 0.95rem; /* Reduced from default */
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -48,19 +49,19 @@ h1, h2, h3, h4, h5, h6, .title-font {
 
 /* Let's make the main title HUGE like "UI/UX DESIGNER" */
 .hero-title {
-    font-size: clamp(4rem, 10vw, 9rem);
+    font-size: clamp(2.5rem, 8vw, 6.5rem); /* Reduced scale */
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.04em;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 /*==================================================================
   [3. Navbar]
 ==================================================================*/
 .navbar {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0.8rem; /* Reduced from 1.5rem */
+    padding-bottom: 0.8rem;
     border-bottom: 1px solid var(--border-color);
     background-color: rgba(253, 249, 244, 0.85) !important;
     backdrop-filter: blur(12px);
@@ -72,9 +73,9 @@ h1, h2, h3, h4, h5, h6, .title-font {
     font-family: var(--font-heading);
     color: var(--text-color) !important;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.75rem; /* Reduced from 0.85rem */
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     margin: 0 1rem;
     position: relative;
 }
@@ -142,9 +143,9 @@ h1, h2, h3, h4, h5, h6, .title-font {
 /* Minimalist thick divider for headers */
 .header-line {
     border-bottom: 2px solid var(--text-color);
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    font-size: 1.2rem;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1rem; /* Reduced from 1.2rem */
     font-weight: 600;
 }
 
@@ -289,7 +290,7 @@ h1, h2, h3, h4, h5, h6, .title-font {
     background-color: var(--text-color);
     color: var(--bg-color);
     border: none;
-    padding: 15px 40px;
+    padding: 12px 30px; /* Reduced from 15px 40px */
     font-family: var(--font-heading);
     text-transform: uppercase;
     font-weight: 600;
@@ -344,7 +345,7 @@ h1, h2, h3, h4, h5, h6, .title-font {
 /* Testimonials & Article minimal */
 .testimonial-text {
     font-family: var(--font-body);
-    font-size: 1.5rem;
+    font-size: 1.1rem; /* Reduced from 1.5rem */
     font-weight: 300;
     line-height: 1.6;
     color: #333;
@@ -364,3 +365,221 @@ h1, h2, h3, h4, h5, h6, .title-font {
 /* Custom CSS fade in animations (Static) */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+
+/*==================================================================
+  [10. Responsiveness & Scale Optimization]
+==================================================================*/
+@media (max-width: 991.98px) {
+    .hero-title {
+        font-size: clamp(2.5rem, 9vw, 5rem) !important;
+        margin-bottom: 1.5rem;
+    }
+    
+    .py-6 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    .technical-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 767.98px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .header-line {
+        font-size: 1rem;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .btn-minimal {
+        padding: 12px 25px;
+        font-size: 0.85rem;
+    }
+
+    /* Icon resizing */
+    .fa-3x { font-size: 2rem !important; }
+    .fa-5x { font-size: 3.5rem !important; }
+    
+    /* Spacing adjustments */
+    .py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    
+    .mt-5 {
+        margin-top: 2rem !important;
+    }
+
+    /* Testimonial adjustments */
+    .testimonial-text {
+        font-size: 1.1rem;
+    }
+
+    /* Article box */
+    .article-box {
+        padding: 1.5rem;
+    }
+}
+
+/* Global Spacing Reductions */
+.py-5 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+.py-6 { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+.mt-5 { margin-top: 2rem !important; }
+
+/* Icon Reductions */
+.fa-5x { font-size: 2.5rem !important; } /* Scaled down */
+.fa-3x { font-size: 1.5rem !important; } /* Scaled down */
+
+/* Hero Image Scale */
+.hero-img-container {
+    max-width: 300px; /* Reduced from 400px */
+}
+
+/* Projects Image Wrapper */
+.project-img-wrapper section {
+    min-height: 200px !important; /* Reduced from 300px */
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3.5rem) !important;
+    }
+    
+    .hero-img-container {
+        max-width: 220px; /* Even smaller on phones */
+    }
+
+    /* Certificates Button Spacing Fix */
+    .certificate-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .certificate-btns .btn-minimal {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/*==================================================================
+  [11. Structural Layout Demo (No DIVs)]
+==================================================================*/
+.layout-demo-section {
+    padding: 2rem 0;
+}
+
+.structural-outer {
+    border: 8px solid #6b21a8; /* Reduced border */
+    background: #fff;
+    padding: 8px; /* Reduced padding */
+    margin: 2rem auto; /* Centered with auto */
+    max-width: 500px; /* Constrained width to look like a phone/rectangle */
+    transition: all 0.3s ease;
+}
+
+.box-wrapper {
+    border: 4px solid #000;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-inner {
+    border: 3px solid #000;
+    min-height: 40px; /* Reduced from 80px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    font-size: 0.75rem; /* Smaller text inside boxes */
+    text-transform: uppercase;
+    margin: 3px;
+    transition: transform 0.2s;
+}
+
+.box-inner:hover {
+    transform: scale(0.99);
+}
+
+/* Colors from image */
+.bg-green-light { background-color: #dcfce7 !important; }
+.bg-blue-light  { background-color: #dbeafe !important; }
+.bg-yellow-light { background-color: #fef3c7 !important; }
+.bg-peach-light  { background-color: #ffedd5 !important; }
+.bg-indigo-light { background-color: #e0e7ff !important; }
+
+/* Special borders for blueprint style */
+.border-red    { border-color: #ef4444 !important; }
+.border-blue   { border-color: #3b82f6 !important; }
+.border-cyan   { border-color: #06b6d4 !important; }
+
+.vh-mini { min-height: 50vh; }
+.vh-small { min-height: 10vh; }
+.vh-large { min-height: 25vh; }
+
+/*==================================================================
+  [12. Exercises Page & Visual Console]
+==================================================================*/
+.exercise-dashboard {
+    background-color: #f8fafc;
+    padding-top: 3rem;
+}
+
+.exercise-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+.exercise-card:hover {
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.05);
+    background: #fff;
+}
+
+.console-ui {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    padding: 1rem;
+    font-family: 'Outfit', 'Courier New', monospace; /* Modern console feel */
+    font-size: 0.85rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #334155;
+}
+
+.console-line {
+    margin-bottom: 6px;
+    padding: 4px 8px;
+    border-left: 3px solid var(--bs-danger);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.js-badge {
+    background-color: #f7df1e;
+    color: #000;
+    padding: 3px 10px;
+    font-weight: 800;
+    font-size: 0.65rem;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.exercise-title {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
