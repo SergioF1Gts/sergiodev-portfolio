@@ -17,20 +17,53 @@
 </head>
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom border-dark shadow-sm py-2">
-        <section class="container-fluid px-4">
-            <a class="nav-link fw-bold text-dark d-flex align-items-center" href="index.html">
-                <i class="fas fa-arrow-left me-2"></i> VOLVER AL PORTAFOLIO
-            </a>
-            <span class="navbar-text ms-auto font-monospace small text-secondary d-none d-md-block">
-                EXPERIMENTO ESTRUCTURAL #01
-            </span>
+    <!-- Navbar -->
+    <nav id="navbar-main" class="navbar navbar-expand-lg fixed-top transition-all">
+        <section class="container px-4 px-lg-5">
+            <button class="navbar-toggler border-0 shadow-none bg-white p-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-3 text-dark"></i>
+            </button>
+            <section class="collapse navbar-collapse p-3 p-lg-0 mt-3 mt-lg-0" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-2 gap-lg-1 align-items-center text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#hero">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">ABOUT ME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#skills">HABILIDADES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#projects">PROYECTOS RECIENTES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="layout.html">LAYOUT (VER DEMO)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ejercicios.html">EJERCICIOS JS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#article">ARTÍCULOS & TESTIMONIOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#certificates">CERTIFICADOS</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav text-center mt-3 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">REDES / CONTACTO</a>
+                    </li>
+                </ul>
+            </section>
         </section>
     </nav>
 
     <main>
         <!-- Structural Layout Demo Section (Cero DIVs) -->
-        <section id="layout" class="layout-demo-section py-5">
+        <section id="layout" class="layout-demo-section py-5 mt-5">
             <section class="container">
                 <header class="text-center mb-3 fade-in-up">
                     <h1 class="h2 fw-800 title-font mb-2">PROTOTIPADO SEMÁNTICO</h1>
@@ -51,10 +84,10 @@
                         <article class="col-md-6 border-end border-dark border-opacity-25">
                             <article class="box-inner bg-peach-light vh-large border-red">CAJA</article>
                         </article>
-                        <aside class="col-md-6">
-                            <article class="box-inner bg-peach-light border-cyan">CAJA</article>
-                            <article class="box-inner bg-peach-light vh-small border-cyan">CAJA</article>
-                            <article class="box-inner bg-peach-light vh-small border-cyan">CAJA</article>
+                        <aside class="col-md-6 d-flex flex-column">
+                            <article class="box-inner bg-peach-light border-cyan flex-fill">CAJA</article>
+                            <article class="box-inner bg-peach-light vh-small border-cyan flex-fill">CAJA</article>
+                            <article class="box-inner bg-peach-light vh-small border-cyan flex-fill">CAJA</article>
                         </aside>
                     </article>
 
@@ -63,7 +96,7 @@
                         <article class="col-md-7 border-end border-dark border-opacity-25">
                             <article class="box-inner bg-blue-light vh-large border-red">CAJA</article>
                         </article>
-                        <aside class="col-md-5">
+                        <aside class="col-md-5 d-flex flex-column">
                             <article class="box-inner bg-blue-light border-blue flex-fill" style="min-height: 80px;">CAJA</article>
                             <article class="box-inner bg-blue-light border-blue flex-fill" style="min-height: 80px;">CAJA</article>
                         </aside>

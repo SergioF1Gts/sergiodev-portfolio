@@ -73,10 +73,10 @@ h1, h2, h3, h4, h5, h6, .title-font {
     font-family: var(--font-heading);
     color: var(--text-color) !important;
     text-transform: uppercase;
-    font-size: 0.75rem; /* Reduced from 0.85rem */
+    font-size: 0.70rem; /* Reduced to fit all items */
     font-weight: 600;
-    letter-spacing: 0.5px;
-    margin: 0 1rem;
+    letter-spacing: 1px; /* Reduced to avoid wrapping */
+    margin: 0 0.5rem; /* Reduced margins */
     position: relative;
 }
 
